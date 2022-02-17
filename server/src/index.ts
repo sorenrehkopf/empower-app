@@ -1,12 +1,17 @@
-import fastify from 'fastify'
+import Fastify from 'fastify'
+import fastifyCors from 'fastify-cors';
+import notesController from './controllers/notes';
 
-const server = fastify()
+const fastify = Fastify({
+	logger: true
+});
 
-server.get('/ping', async (request, reply) => {
-  return 'pong\n'
-})
+fastify.register(fastifyCors, {
+	origin: ['http://localhost:3000']
+});
+fastify.register(notesController)
 
-server.listen(8080, (err, address) => {
+fastify.listen(8080, (err, address) => {
   if (err) {
     console.error(err)
     process.exit(1)
