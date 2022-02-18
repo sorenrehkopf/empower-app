@@ -11,7 +11,6 @@ export type fetchUtilArgs = {
 export type fetchResponse = {
 	data?: any,
 	error?: any,
-	status?: number,
 	ok: boolean,
 };
 
@@ -36,7 +35,6 @@ export const fetchRequest = ({ endpoint, method = 'GET', body }: fetchUtilArgs):
 		return fetch(request, init)
 			.then(async response => ({
 				data: await response.json(),
-				status: response.status,
 				ok: response.ok
 			}))
 			.catch(e => ({

@@ -24,12 +24,12 @@ const NoteView = ({ edit }: NoteViewProps): React.ReactElement => {
 
 	useEffect(() => {
 		if (noteId) {
-		fetchRequest({ endpoint: `/notes/${noteId}` })
-			.then(({ data, ok }) => {
-				if (ok) {
-					setNote(data.note)
-				}
-			});
+			fetchRequest({ endpoint: `/notes/${noteId}` })
+				.then(({ data, ok }) => {
+					if (ok) {
+						setNote(data.note)
+					}
+				});
 		}
 	}, []);
 
