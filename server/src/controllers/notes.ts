@@ -6,7 +6,7 @@ type FastifyRequest = {
 	body: any
 };
 
-export const NotesEndpointRoot = '/notes';
+const NotesEndpointRoot = '/notes';
 
 export default async function routes (fastify: any, options: any) {
 	// Gets the last 100 created notes.
@@ -27,6 +27,8 @@ export default async function routes (fastify: any, options: any) {
 	});
 
 	// This route serves as both create and update for notes.
+	// May want to split this into separate routes for good separation of concerns
+	// in the future but for the time being this is simpler for the client to interface with.
 	fastify.post(`${NotesEndpointRoot}`, async ({ body }: FastifyRequest) => {
 		const { id, contactName, noteText } = JSON.parse(body);
 		let note: any = null;

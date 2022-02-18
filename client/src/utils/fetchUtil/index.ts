@@ -18,6 +18,13 @@ export const getBaseUrl = (): string | undefined => ({
 	localhost: DevApiBaseUrl
 })[window.location.hostname];
 
+/* This is a simple utility to provide some config, serialization, and error handling when fething data.
+ * In the future this would be a convenient place to handle the client side of token authentication.
+ *
+ * endpoint - string - The endpoint for the request.
+ * method - string - default 'GET' - The method for the request.
+ * body - json - The body to include for post and put requests.
+ */
 export const fetchRequest = ({ endpoint, method = 'GET', body }: fetchUtilArgs): Promise<fetchResponse> => {
 	const request: Request = new Request(`${getBaseUrl()}${endpoint}`)
 	const init: RequestInit = {
