@@ -1,0 +1,21 @@
+.actionIcon {
+	cursor: pointer;
+	fontSize: 2rem;
+}
+
+.header {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding-top: 8px;
+	color: white;
+}
+
+.content {
+	padding: 0px 38px;
+}
+
+.noteItem {
+	padding: 16px 16px;
+	background-color: white;
+}
