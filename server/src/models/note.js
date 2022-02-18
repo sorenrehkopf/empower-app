@@ -14,8 +14,14 @@ module.exports = (sequelize, DataTypes) => {
     }
   }
   Note.init({
-    contactName: DataTypes.STRING,
-    noteText: DataTypes.TEXT
+    contactName: {
+      type: DataTypes.STRING,
+      allowNull: false
+    },
+    noteText: {
+      type: DataTypes.TEXT,
+      allowNull: false
+    }
   }, {
     sequelize,
     modelName: 'Note',
