@@ -1,3 +1,7 @@
+/**
+ * Generated via `sequelize model:create` cli command.
+ */
+
 'use strict';
 const {
   Model

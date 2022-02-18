@@ -9,7 +9,7 @@ type FastifyRequest = {
 export const NotesEndpointRoot = '/notes';
 
 export default async function routes (fastify: any, options: any) {
-	// Gets the last 100 created notes
+	// Gets the last 100 created notes.
 	fastify.get(`${NotesEndpointRoot}`, async () => {
 		const notes = await Note.findAll({
 			limit: 100,
@@ -19,7 +19,7 @@ export default async function routes (fastify: any, options: any) {
 		return { notes };
 	});
 
-	// Get a specific note by id
+	// Get a specific note by id.
 	fastify.get(`${NotesEndpointRoot}/:noteId`, async ({ params: { noteId: id } }: FastifyRequest) => {
 		const note = await Note.findOne({ where: { id } });
 

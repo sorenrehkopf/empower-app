@@ -13,6 +13,7 @@ fastify.register(fastifyCors, {
 });
 fastify.register(notesController)
 
+// Make sure database is synced up and start server.
 sequelize.sync().then(() => {
 	fastify.listen(8080, (err, address) => {
 	  if (err) {
