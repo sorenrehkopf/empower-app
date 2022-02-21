@@ -35,4 +35,4 @@ The client is configured to talk to the server at localhost:8080 when running in
 
 * I created the client with create-react-app cause I figured it would save time for a quick challenge app like this and I guess it maybe did? But it also did some weird config stuff that I mostly sorted out but there are some artifacts for sure, including the missing git history for most of the work done on the client.
 * I wrote out client side tests but opted to leave them as TODO cause I was running into config issues mentioned above and had already sunk a fair bit of time into this. I did not write out serverside cases for the same time reason, but would have done for the notes controller at least.
-* Tried to do a fair bit of cleanup and review before calling it done, but as it's a petri-dish challenge app there are definitely some patterns I wouldn't necessarily stand by.
+* Tried to do a fair bit of cleanup and review before calling it done, but as it's a petri-dish challenge app there are definitely some patterns I wouldn't necessarily stand by. Left a few notes to this effect but didn't hit everything I'm sure.

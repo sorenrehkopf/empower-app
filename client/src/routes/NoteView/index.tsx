@@ -59,6 +59,10 @@ const NoteView = ({ edit }: NoteViewProps): React.ReactElement => {
 		});
 	}, []);
 
+	// TODO:
+	// These ternaries make this component feel a bit overloaded at the moment.
+	// Either sort out the styling so that we can do the read only version just by disabling
+	// the input components, or split the read and the edit views into separate components.
 	return (
 		<Layout>
 			<Layout.Header className={style.header} style={{ backgroundColor: grey.primary }}>
